@@ -19,5 +19,16 @@ public function __construct(TarefaService $tarefaService)
     return response()->json ($tarefa);
     }
  
+    public function findByid($id){
+       $result = $this -> tarefaService->findById($id);
+       return response()->json ($result);
+
+    }
+
+   public function index(){
+    $tarefa = $this ->tarefaService->getAll();
+    return response()->json ($tarefa);
+   }
 
 }
+
